@@ -6,13 +6,11 @@ var solution1 = function(limit){
     sequence.push(3);
     var length = sequence.length;
     
-    while(sequence[length-1] <= limit){    // generate Fibonacci sequence
+    while(sequence[length-1] <= limit){ 
         sequence.push(sequence[length-1] + sequence[length-2]);
-        length = sequence.length;	// update variable storing array size
+        length = sequence.length;
     }
 
-    // last number in the sequence will be too large, so the for loop will
-    // only run from element 0 to element length-2 instead of length-1
     for(var i = 0; i <= length-2; i++){
         if(sequence[i] % 2 === 0){
             sum += sequence[i];
